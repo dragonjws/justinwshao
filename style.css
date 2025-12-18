@@ -331,14 +331,14 @@ header{
     font-size: 5rem;
 }
 
-.Classify-img {
+.Projects-img {
     position: absolute;
-    top: 90px;
+    top: 0px;
     right: 0;
     width: 300px;
 }
 
-.Classify-img img {
+.Projects-img img {
     width: 100%;
     height: auto;
     max-width: 300px;
@@ -347,6 +347,13 @@ header{
     animation: fadeIn 0.8s ease 0.2s both;
 }
 
+#projects > div > div:first-of-type .Projects-img {
+    top: 90px;
+}
+
+#projects > div > div:nth-of-type(2) .Projects-img {
+    top: 40px;
+}
 
 .Checkpoint-social-icons {
     display: flex;
@@ -366,23 +373,6 @@ header{
 
 .Checkpoint-social-icons a i {
     font-size: 5rem;
-}
-
-
-.Checkpoint-img {
-    position: absolute;
-    top: 400px;
-    right: 0;
-    width: 300px;
-}
-
-.Checkpoint-img img {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-    border-radius: 0%;
-    object-fit: cover;
-    animation: fadeIn 0.8s ease 0.2s both;
 }
 
 #projects h3:nth-of-type(2) {
