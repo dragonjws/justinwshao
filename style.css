@@ -281,7 +281,7 @@ header{
 }
 
 #projects h2:nth-of-type(2) {
-    margin-top: 100px;
+    margin-top: 150px;
 }
 
 #projects h3 {
@@ -294,6 +294,10 @@ header{
 
 #projects > div {
     position: relative;
+}
+
+#projects > div > div:nth-of-type(2) {
+    margin-top: 80px;
 }
 
 #projects p {
@@ -327,22 +331,14 @@ header{
     font-size: 5rem;
 }
 
-#projects h3:nth-of-type(3) {
-    margin-top: 120px;
-}
-
-#projects h3:nth-of-type(3) + p {
-    margin-top: 25px;
-}
-
-.Projects-img {
+.Classify-img {
     position: absolute;
-    top: 0px;
+    top: 90px;
     right: 0;
     width: 300px;
 }
 
-.Projects-img img {
+.Classify-img img {
     width: 100%;
     height: auto;
     max-width: 300px;
@@ -351,12 +347,13 @@ header{
     animation: fadeIn 0.8s ease 0.2s both;
 }
 
+
 .Checkpoint-social-icons {
     display: flex;
     gap: 2rem;
     align-items: center;
     margin-left: 5px;
-    margin-top: -20px;
+    margin-top: -50px;
     margin-bottom: -50px;
     animation: fadeIn 0.8s ease 0.6s both;
 }
@@ -369,6 +366,40 @@ header{
 
 .Checkpoint-social-icons a i {
     font-size: 5rem;
+}
+
+
+.Checkpoint-img {
+    position: absolute;
+    top: 400px;
+    right: 0;
+    width: 300px;
+}
+
+.Checkpoint-img img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 0%;
+    object-fit: cover;
+    animation: fadeIn 0.8s ease 0.2s both;
+}
+
+#projects h3:nth-of-type(2) {
+    margin-top: 70px;
+}
+
+#projects h3:nth-of-type(2) + p {
+    margin-top: 40px;
+}
+
+#projects h3:nth-of-type(3) {
+    position: relative;
+    margin-top: 100px;
+}
+
+#projects h3:nth-of-type(3) + p {
+    margin-top: 25px;
 }
 
 .Soccer-social-icons {
@@ -489,22 +520,6 @@ header{
     padding-bottom: 15px;
     border-bottom: 4px solid black;
     animation: slideInLeft 0.6s ease 0.3s both;
-}
-
-.Leadership-img {
-    position: absolute;
-    top: 0px;
-    right: 0;
-    width: 300px;
-}
-
-.Leadership-img img {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-    border-radius: 0%;
-    object-fit: cover;
-    animation: fadeIn 0.8s ease 0.2s both;
 }
 
 .work-img {
