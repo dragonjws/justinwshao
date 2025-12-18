@@ -16,8 +16,9 @@ html{
 
 body{
     width: 100%;
+    min-width: 1200px;
     height: 100vh;
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: auto;
     background-color: rgb(255, 248, 221);
     color: black;
@@ -30,6 +31,7 @@ header{
     top: 0;
     left: 0;
     width: 100%;
+    min-width: 1200px;
     padding: 1rem 9%;
     background-color: white;
     filter: drop-shadow(10px);
@@ -87,6 +89,38 @@ header{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 101;
+    position: absolute;
+    top: 1rem;
+    right: 9%;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 .home {
     padding: 120px 9% 150px;
     display: none;
@@ -95,6 +129,7 @@ header{
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.5s ease, transform 0.5s ease;
+    min-width: 1200px;
 }
 
 .home.active {
@@ -194,6 +229,7 @@ header{
 .section {
     padding: 120px 9% 150px;
     min-height: 100vh;
+    min-width: 1200px;
     display: none;
     opacity: 0;
     transform: translateY(30px);
@@ -269,24 +305,6 @@ header{
     animation: slideInLeft 0.9s ease 0.5s both;
 }
 
-
-
-.Classify-img {
-    position: absolute;
-    top: 85px;
-    right: 0;
-    width: 300px;
-}
-
-.Classify-img img {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-    border-radius: 0%;
-    object-fit: cover;
-    animation: fadeIn 0.8s ease 0.2s both;
-}
-
 .Classify-social-icons {
     display: flex;
     gap: 2rem;
@@ -317,14 +335,14 @@ header{
     margin-top: 25px;
 }
 
-.Checkpoint-img {
+.Projects-img {
     position: absolute;
-    top: 405px;
+    top: 0px;
     right: 0;
     width: 300px;
 }
 
-.Checkpoint-img img {
+.Projects-img img {
     width: 100%;
     height: auto;
     max-width: 300px;
@@ -656,6 +674,56 @@ header{
 .logo:hover {
     transform: scale(1.05);
 }
+
+/* Hamburger Menu for Compressed Screens */
+@media screen and (max-width: 1400px) {
+    header {
+        position: fixed;
+        justify-content: space-between;
+    }
+    
+    .navbar {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px 20px 20px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 99;
+        overflow-y: auto;
+    }
+    
+    .menu-toggle {
+        display: flex;
+        position: fixed;
+        top: 1rem;
+        right: 2rem;
+        z-index: 101;
+    }
+    
+    .navbar.active {
+        display: flex;
+        right: 0;
+    }
+    
+    .navbar.active a {
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px;
+        text-align: left;
+        border: 2px solid black;
+        font-size: 2.5rem;
+    }
+}
+
+/* Horizontal scrolling enabled - layout maintains desktop view */
 
 
 

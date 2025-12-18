@@ -13,7 +13,12 @@
 <body>
     <header>
         <a href="#home" class="logo">Justin Shao</a>
-        <nav class="navbar">
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="navbar" id="navbar">
             <a href="#home">Home</a>
             <a href="#projects">Projects</a>
             <a href="#leadership">Leadership</a>
@@ -52,6 +57,7 @@
     <section id="projects" class="section">
         <div>
             <h2>Full-Stack Projects
+                <div>
                 <h3>AI Schedule Builder - AWS X INRIX Hackathon</h3>
                 <p>Designed and implemented an AI Schedule builder that generates multiple feasible 
                    academic schedules based on user-defined constraints and preference weighting. Deployed
@@ -59,26 +65,29 @@
                    Amazon S3 for scalable storage of course catalogs and section metadata, and 
                    DynamoDB for low-latency persistence of user profiles, constraints, and generated schedule variants. 
                 </p>
-                <div class="Classify-img">
+                <div class="Projects-img">
                     <img src="Classify.jpg" alt="">
+                </div>
                 </div>
                 <h3><div class="Classify-social-icons">
                 <a href="https://github.com/dragonjws/Classify_aws_hackathon" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://devpost.com/software/clarify-a-class-scheduler" target="_blank"><i class="fa-solid fa-code"></i></a>
                 </div></h3>
+                <div>
                 <h3>PDF Version Saver - Adobe Hackathon</h3>
                 <p>Developed a version control system that enables persistent storage and versioned visualization 
                    of PDF and image edits through a robust, cloud-based backend. Designed and implemented RESTful API workflows 
                    using Postman for validation and integration, with Amazon DynamoDB handling low-latency storage of user edits 
                    and document metadata, and AWS infrastructure supporting secure, scalable data persistence. Awarded 2nd Best Overall.
                 </p>
-                <div class="Checkpoint-img">
+                <div class="Projects-img">
                     <img src="Checkpoint.jpg" alt="">
                 </div>
                 <h3><div class="Checkpoint-social-icons">
                     <a href="https://github.com/dragonjws/adobe-checkpoint" target="_blank"><i class="fa-brands fa-github"></i></a>
                     <a href="https://devpost.com/software/adobe-checkpoint" target="_blank"><i class="fa-solid fa-code"></i></a>
                 </div></h3>
+                </div>
             </h2>
             <h2>Hardware Projects
                 <h3>Automated Soccer Goal Scoring Machine - SCU Robot Show</h3>
@@ -318,6 +327,34 @@
         window.addEventListener('popstate', function() {
             const hash = window.location.hash || '#home';
             showSection(hash);
+        });
+
+        // Hamburger Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navbar.classList.toggle('active');
+        });
+
+        // Close menu when a nav link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                navbar.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navbar.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnToggle && navbar.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                navbar.classList.remove('active');
+            }
         });
     </script>
 </body>
