@@ -317,8 +317,6 @@ header{
     margin-top: -20px;
     margin-bottom: -50px;
     animation: fadeIn 0.8s ease 0.6s both;
-    border-bottom: 1px solid black;
-    padding-bottom: 20px;
     margin-right: 350px;
 }
 
@@ -331,28 +329,40 @@ header{
     font-size: 5rem;
 }
 
-.Projects-img {
+.Classify-img {
     position: absolute;
-    top: 0px;
+    top: 445px;
     right: 0;
-    width: 300px;
+    width: 220px;
+    height: 165px;
 }
 
-.Projects-img img {
+.Classify-img img {
     width: 100%;
-    height: auto;
-    max-width: 300px;
+    height: 100%;
+    max-width: 220px;
+    max-height: 165px;
     border-radius: 0%;
     object-fit: cover;
     animation: fadeIn 0.8s ease 0.2s both;
 }
 
-#projects > div > div:first-of-type .Projects-img {
-    top: 90px;
+.Checkpoint-img {
+    position: absolute;
+    top: 140px;
+    right: 0;
+    width: 220px;
+    height: 165px;
 }
 
-#projects > div > div:nth-of-type(2) .Projects-img {
-    top: 40px;
+.Checkpoint-img img {
+    width: 100%;
+    height: 100%;
+    max-width: 220px;
+    max-height: 165px;
+    border-radius: 0%;
+    object-fit: cover;
+    animation: fadeIn 0.8s ease 0.2s both;
 }
 
 .Checkpoint-social-icons {
@@ -362,6 +372,8 @@ header{
     margin-left: 5px;
     margin-top: -50px;
     margin-bottom: -50px;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
     animation: fadeIn 0.8s ease 0.6s both;
 }
 
@@ -451,11 +463,13 @@ header{
     display: flex;
     color: grey;
     align-items: center;
+    justify-content: flex-end;
     height: 100%;
 }
 
 .timeline-content {
     margin-left: 0;
+    position: relative;
 }
 
 .timeline-content h3 {
