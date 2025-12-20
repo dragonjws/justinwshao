@@ -827,6 +827,12 @@ header{
         transform: rotate(-45deg) translate(5px, -5px);
     }
     
+    .navbar.active a {
+        font-size: 1.2rem;
+        padding: 12px;
+        margin: 8px 0;
+    }
+    
     .home {
         flex-direction: column;
         padding: 100px 5% 50px;
